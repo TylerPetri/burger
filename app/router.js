@@ -1,23 +1,20 @@
-// const orm = require('./orm')
-const db = require('./connection')('burger','rootroot')
+const orm = require('./orm')
 
 function router(app) {
 
   app.get("/api/burgers", async (req, res) => {
-    const data = await db.query("SELECT * FROM request");
+    const data = await orm.getList()
     res.send(data);
   });
 
   app.post("/api/burgers", async (req, res) => {
-    await db.query("INSERT INTO request (request) VALUES (?)", [
-      req.body.request,
-    ]);
+    await orm.postRequest( req.body.request )
     res.redirect("/");
   });
 
   app.delete("/api/burgers/:id", async (req, res) => {
     const id = req.params.id;
-    await db.query(`UPDATE request SET eaten = '1' WHERE id = '${id}'`);
+    await orm.munch( id )
     res.send({ message: `munched ${id}` });
   });
 }
