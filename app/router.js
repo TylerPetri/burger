@@ -2,10 +2,12 @@ const orm = require('./orm')
 
 function router(app) {
 
-  app.get("/api/burgers", async (req, res) => {
-    const data = await orm.getList()
-    res.send(data);
-  });
+
+  app.get('/', async ( req,res ) => {
+    const d = await orm.getPre()
+    const data = await orm.getPost()
+      res.render('index', { preMunch: d, postMunch: data });
+  })
 
   app.post("/api/burgers", async (req, res) => {
     await orm.postRequest( req.body.request )
@@ -15,7 +17,7 @@ function router(app) {
   app.delete("/api/burgers/:id", async (req, res) => {
     const id = req.params.id;
     await orm.munch( id )
-    res.send({ message: `munched ${id}` });
+    res.end()
   });
 }
 
