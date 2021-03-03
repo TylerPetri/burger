@@ -11,13 +11,14 @@ function router(app) {
 
   app.post("/api/burgers", async (req, res) => {
     await orm.postRequest( req.body.request )
+    console.log(req.body)
     res.redirect("/");
   });
 
-  app.delete("/api/burgers/:id", async (req, res) => {
+  app.put("/api/burgers/:id", async (req, res) => {
     const id = req.params.id;
     await orm.munch( id )
-    res.end()
+    res.send({ message: "Note Updated!" });
   });
 }
 

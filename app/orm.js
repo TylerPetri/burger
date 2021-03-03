@@ -9,8 +9,8 @@ function getPost(){
     return db.query("SELECT * FROM request WHERE eaten > 0")
 }
 
-function postRequest(req){
-    return db.query("INSERT INTO request (request) VALUES (?)", [req]);
+function postRequest(request){
+    return db.query("INSERT INTO request (request) VALUES (?)", [request]);
 }
 
 function munch(id){

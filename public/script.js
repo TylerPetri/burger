@@ -1,52 +1,23 @@
-async function noms(id){
+async function noms(id) {
 
     const fetchOptions = {
-        method: 'DELETE',
+        method: 'PUT',
         headers: { 'Content-Type': 'application/json' }
     }
-    await fetch( `/api/burgers/${id}`, fetchOptions ).then(r=>r.json())
-    
-    // refreshList()
+    await fetch(`/api/burgers/${id}`, fetchOptions).then(r => r.json())
+    location.href = '/'
 }
 
-async function request() {
+async function hungry() {
     const fetchOptions = {
+        method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        method: 'POST'
     }
-    console.log(fetchOptions)
+    const data = {
+        request: document.querySelector('#burgerIn').textContent
+    }
+    console.log(document.querySelector('#burgerIn').textContent)
+    data.body = JSON.stringify(data)
 
-    await fetch('api/burgers', fetchOptions).then(r=>r.json())
-    // refreshList()
+    await fetch('/api/burgers', fetchOptions).then(r => r.json())
 }
-
-// async function refreshList() {
-
-//     const r = await fetch('/api/burgers').then(r => r.json())
-
-//     document.querySelector('.preMunch').innerHTML = ''
-//     document.querySelector('.postMunch').innerHTML = ''
-//     r.map(req => {
-//         if (req.eaten < 1){
-//         document.querySelector('.preMunch').innerHTML += `
-//             <div class="row d-flex">
-//                 <div class="card munch">
-//                 <div class="card-body">
-//                   ${req.id}. ${req.request}
-//                 </div>
-//                 </div>
-//                 <button class="btn btn-primary mt-3 devour" onClick="devour(${req.id})">Devour!</button>
-//             </div>
-//             `
-//         } else {
-//             document.querySelector('.postMunch').innerHTML += `
-//         <div class="card munch">
-//             <div class="card-body">
-//                 ${req.id}. ${req.request}
-//             </div>
-//         </div>
-//         `
-//         }
-//     })
-// }
-// refreshList()

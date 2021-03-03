@@ -1,39 +1,51 @@
 <div class="container-fluid text-center mt-5" style="height:200px">
-        <img src="./assets/burger.PNG" alt="burger icon">
-    </div>
-    <div class="container-fluid text-center">
-        <h1>Eat-Da-Burger!</h1>
-    </div>
-    <div class="container d-flex my-4" style="max-width:1080px;">
+    <img src="./assets/burger.PNG" alt="burger icon">
+</div>
+<div class="container-fluid text-center">
+    <h1>Eat-Da-Burger!</h1>
+</div>
+<div class="container d-flex my-4" style="max-width:1080px;">
 
-        <div class="container preMunch" style="width:45%">
-           <!-- List of burger requests -->
-           {{#each preMunch}}
-           <div class="row d-flex mb-3">
-                <div class="card munch">
-                    <div class="card-body">
-                    {{this.id}}. {{this.request}}
-                    </div>
-                </div>
-                <button class="btn btn-primary mt-3 devour" onClick="noms({{this.id}})">Devour!</button>
-            </div>
-           {{/each}}
-        </div>
-        <div class="container postMunch" style="width:45%">
-            <!-- List of devoured -->
-            {{#each postMunch}}
+    <div class="container preMunch" style="width:45%">
+        <!-- List of burger requests -->
+        {{#each preMunch}}
+        <div class="row d-flex mb-3">
             <div class="card munch">
                 <div class="card-body">
                     {{this.id}}. {{this.request}}
                 </div>
             </div>
-            {{/each}}
+            <button class="btn btn-primary mt-3 devour" onClick="noms({{this.id}})">Devour!</button>
         </div>
+        {{/each}}
     </div>
+    <div class="container postMunch" style="width:45%">
+        <!-- List of devoured -->
+        {{#each postMunch}}
+        <div class="card munch">
+            <div class="card-body">
+                {{this.id}}. {{this.request}}
+            </div>
+        </div>
+        {{/each}}
+    </div>
+</div>
 
-    <div class="container d-flex justify-content-center text-center" style="max-width:600px">
-        <form action='/api/burgers' method='post'>
-            <textarea class="form-control" id="burgerIn" name="request"></textarea>
-            <button class="btn btn-primary my-3" onClick="request()">Submit</button>
-        </form>
-    </div>
+<div class="container d-flex justify-content-center text-center" style="max-width:600px">
+    <form action="/api/burgers" method="POST">
+        <textarea class="form-control" id="burgerIn" name="request"></textarea>
+        <button class="btn btn-primary my-3">Submit</button>
+    </form>
+</div>
+
+<script>
+    async function noms(id) {
+
+        const fetchOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' }
+        }
+        await fetch(`/api/burgers/${id}`, fetchOptions).then(r => r.json())
+        location.href = '/'
+    }
+</script>
