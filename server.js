@@ -1,5 +1,5 @@
 const express = require('express')
-const apiRouter = require('./app/router')
+const apiRouter = require('./models/burger.js')
 const exphbs = require('express-handlebars')
 
 const app = express()

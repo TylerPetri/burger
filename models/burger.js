@@ -1,7 +1,6 @@
-const orm = require('./orm')
+const orm = require('../config/orm')
 
 function router(app) {
-
 
   app.get('/', async ( req,res ) => {
     const d = await orm.getPre()
