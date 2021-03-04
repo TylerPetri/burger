@@ -1,3 +1,4 @@
+require( 'dotenv' ).config()
 const express = require('express')
 const apiRouter = require('./models/burger.js')
 const exphbs = require('express-handlebars')

@@ -1,4 +1,4 @@
-const db = require( './connection' )('burgers_db','rootroot')
+const db = require( './connection' )(process.env.DB_NAME,process.env.DB_PWD)
 
 function getPre(){
     return db.query("SELECT * FROM burgers WHERE devoured is null")
