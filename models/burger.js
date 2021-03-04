@@ -10,7 +10,6 @@ function router(app) {
 
   app.post("/api/burgers", async (req, res) => {
     await orm.postRequest( req.body.request )
-    console.log(req.body)
     res.redirect("/");
   });
 

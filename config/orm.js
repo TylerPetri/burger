@@ -1,4 +1,3 @@
-// const db = require( './connection' )(process.env.DB_NAME,process.env.DB_PWD)
 const db = require( './connection' )('burgers_db','rootroot')
 
 function getPre(){
