@@ -13,7 +13,7 @@ Link to the application: https://glacial-taiga-08008.herokuapp.com/
 
 
 
-![main](publi/assets/img/burgers.PNG)
+![main](public/assets/img/burgers.PNG)
 
 ## Contributing
 
