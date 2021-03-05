@@ -6,6 +6,8 @@
 
 Want a double double? Type it in the box and submit! Devour or not to devour is now the question.
 
+Using mysql database and handlebars to load all into body
+
 
 ## Deployed Application
 
