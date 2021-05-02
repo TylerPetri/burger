@@ -23,11 +23,10 @@ There were no automated tests during the process of this application.
 
 ## Built with
 
-Express Handlebars, MySQL, Bootstrap, Javascript, CSS, HTML, ORM
-
-## License
-
-This project is licensed under the MIT License
+* [Express-Handlebars](https://www.npmjs.com/package/express-handlebars) - The view engine
+* [MySQL](https://www.mysql.com/) - Database used
+* [Bootstrap](https://getbootstrap.com/) - Styling toolkit
+* ORM - Object relational mapping
 
 ## Contributing
 
@@ -35,6 +34,10 @@ There are many ways in which you can participate in the project, for example:
 * Submit bugs and feature requests to the email below, and help us verify as they are checked in 
 * Review source code changes
 * Review the documentation and make pull requests for anything from typos to new content
+
+## License
+
+This project is licensed under the MIT License
 
 ## Questions
 
