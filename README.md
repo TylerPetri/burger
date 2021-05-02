@@ -34,4 +34,8 @@ There are many ways in which you can participate in the project, for example:
 
 ## Questions
 
+<<<<<<< HEAD
 For any additional questions see my [GitHub profile](http://github.com/tylerpetri) or contact tylerpetri93@gmail.com
+=======
+For any additional questions see my [GitHub profile](http://github.com/tylerpetri) or contact tylerpetri93@gmail.com
+>>>>>>> e2471e34bae0a798fb0e25c4534efb672c42f340
