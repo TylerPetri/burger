@@ -17,6 +17,14 @@ Link to the application: https://glacial-taiga-08008.herokuapp.com/
 
 ![main](public/assets/img/screenshot.PNG)
 
+## Running the tests
+
+There were no automated tests during the process of this application.
+
+## Built with
+
+Express Handlebars, MySQL, Bootstrap, Javascript, CSS, HTML, ORM
+
 ## Contributing
 
 There are many ways in which you can participate in the project, for example: 
@@ -26,4 +34,4 @@ There are many ways in which you can participate in the project, for example:
 
 ## Questions
 
-For any additional questions see my [GitHub profile](http://github.com/tylerpetri) or contact tylerpetri@hotmail.com
+For any additional questions see my [GitHub profile](http://github.com/tylerpetri) or contact tylerpetri93@gmail.com
